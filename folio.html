@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Portfolio!</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<style>
+
+.navbar-default {
+    background-color: #00205B;
+    border-color: #E7E7E7;
+    padding:0px;
+  }
+
+.navText{
+  font-family:'Lobster',monospace;
+}
+
+
+.navbar-brand h2{
+  
+  font-weight: bold;
+  font-size: 320%;
+  color:#FA4616;
+
+}
+
+
+.pClass{
+  margin-top: 200px;
+  font-size: 1.15em;
+  font-family: 'Tangerine', serif;
+  font-size: 35px;
+
+}
+
+.cClass{
+  margin-top: 50px;
+  font-size: 1.15em;
+  font-family: 'Tangerine', serif;
+  font-size: 35px;
+}
+
+.formClass{
+  margin-top: 65px;
+  margin-bottom:20px;
+}
+
+.imgCircle {
+    border-color: none;
+    border-width: 100%;
+    border-style: solid;
+    border-radius:100%;
+    height:400px;
+    margin:110px 10px 0 10px;
+    margin-bottom: 20px;
+    padding-top: 40px;
+    float: right;
+
+
+  }
+
+  .appFrame{
+
+    border-color: black;
+    border-width: 100%;
+    border-style: solid;
+    height:200px;
+    margin:60px 10px 0 10px;
+    border-radius: 0;
+    margin-bottom: : 50px;
+    
+  }
+
+  #portHead{
+    text-align: center;
+    text-transform: uppercase; 
+    font-family: 'Open Sans', sans-serif;
+  }
+
+
+
+.navColor{
+  color:#FA4616;
+}
+
+
+
+
+</style>
+</head>
+<body>
+  <div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="navbar-brand"><h2 class="navText text-primary">Folio</h2></div>
+        </div>
+        <div class="collapse navbar-collapse">
+  <ul class="nav navbar-nav navbar-right">
+    <li class="active"><a href="#home"> <h2 class="navText navColor">About</h2></a></li>
+    <li><a href="#about"> <h2 class="navText navColor">Portfolio</h2></a></li>
+    <li><a href="#download"> <h2 class="navText navColor">Contact Me</h2></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div class="container" id="aboutContainer">
+  <div class="row">
+    <div class="col-md-6">
+<p class="pClass"> <strong> Hello there, i am a graduate student at the University of Florida. I love travel, culture and all things GatorNation! I Worked 4 years as a database administrator and now am a aspiring UI Developer and this is my sample portfolio for now. Will keep adding pictures of my work in the days to come. Keep watching this space for exiciting updates . Have a great 2018! </strong></p>
+</div>  
+
+<div class="col-md-6">
+  <a href="#"><img class="img-responsive imgCircle" id="meGator" src="gator.jpg"></a>
+</div>
+
+
+</div>
+
+</div>
+<hr style="height:2px;border:none;color:#333;background-color:#333;width:86%;" />
+
+
+<div class="container" id="folioContainer">
+  <div class="row">
+    <h2 id="portHead"> Portfolio</h2>
+    <hr style="height:3px;border:none;color:#333;background-color:#333;width:86%;" />
+    <div class="col-md-6">
+      <a href="#"><img src="app1.png" class="appFrame"></a>
+ </div>
+
+ <div class="col-md-6">
+      <a href="#"><img src="app2.png" class="appFrame"></a>
+ </div>
+
+  <div class="col-md-6">
+      <a href="#"><img src="app3.png" class="appFrame" id="app3"></a>
+ </div>
+
+   <div class="col-md-6">
+      <a href="#"><img src="app4.png" class="appFrame"></a>
+ </div>
+
+</div>
+<hr style="height:1px;border:none;color:#333;background-color:#333;width:100%;" />
+
+
+
+
+</div>
+
+<div class="container" id="contactContainer">
+  <div class="row">
+    <h2 id="portHead"> Contact Me</h2>
+    <hr style="height:3px;border:none;color:#333;background-color:#333;width:86%;" />
+
+    <div class="col-md-6">
+<p class="cClass"> <strong> Want to get in touch with me? Be it to request more info about myself or my experience, to ask for my resume, tips on how to solve your crossword, random questions about the universe and the meaning of life, or even if only for some nice key lime pie here in sunny florida... just feel free to drop me a line anytime. I promise to reply A.S.A.P. </strong></p>
+</div> 
+
+<div class="col-md-6">
+<div class="form-group">
+   <input type="email" placeholder="Email Address" class="form-control formClass">
+</div>
+
+  <div class="form-group">
+    <input type="password" placeholder="password" class="form-control ">
+  </div>
+
+  <div class="form-group">
+    <input type="text" placeholder="Phone number" class="form-control ">
+  </div>
+
+   <div class="form-group">
+    <textarea class="form-control" rows="4" id="comment" placeholder="Drop me a Message ;)"></textarea>
+  </div>
+
+</div>
+  
+
+
+ </div>
+ </div> 
+</body>
+</html>
+
