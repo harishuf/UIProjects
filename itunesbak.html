@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <title>Itune Album!</title>
+
+<style>
+
+#searchbar{
+  margin-top: 50px;
+  width:300%;
+  float:center;
+}
+
+.area{
+  border:1px solid black;
+  margin-top: 50px;
+  margin-bottom: 30px;
+      box-sizing: border-box;
+       width:50%;
+  height: 49%;
+   float: left;
+   display:flex;
+
+  }
+
+#image{
+  width:20%;
+}
+
+</style>
+  
+  </head>
+
+  <body>
+        <div class="container">
+          
+     <div class="input-group">
+      <form>
+        
+        <input type="text" class="form-control" placeholder="enter artist name" id="searchbar" />
+        
+        <div class="form-group">
+      <button type="button" value="Login" class="btn btn-default" id="search">
+        <span class="glyphicon glyphicon-search input-group-addon"></span>
+      </button>
+  </div>
+</form>
+</div>
+</div>
+
+
+
+<div id="area1">
+  
+  </div>
+
+  
+
+
+
+
+
+<script>
+  $(document).ready(function(){
+
+        
+        $("#search").click(function(){
+         if(!($("#searchbar").val()=="")){
+         var band=$("#searchbar").val();
+         var apiurl="http://itunes.apple.com/search?term="+band+"&country=us&limit=5";
+
+         console.log(apiurl);
+        $.ajax({
+            url:apiurl,
+            dataType: 'json'
+                     }).done(function(data){
+            //console.log(data);
+            $("#area1").html("");
+         
+  var content="";           
+for(var j in data.results){
+//console.log(j);   
+var a=$("<div class='area'></div>").html(
+                              
+   "<img src="+data.results[j].artworkUrl100+"/>"+"<br/>"+
+   "Artist Name : "+data.results[j].artistName+"<br/>"+
+   "Track Name : "+data.results[j].trackName+"<br/>"+
+   "Track URL: "+data.results[j].trackViewUrl+"<br/>"+
+   "Track Price: "+data.results[j].trackPrice+"<br/>"
+  );
+//content+=a.html();
+$("#area1").append(a);
+  //         
+   //console.log($("#area1").html());          
+                 
+            }
+            //$("#area1").html(content);
+            });
+                   }
+          });
+        
+    
+    });       
+</script>
+ 
+</body>
+
+
+       </html>
+

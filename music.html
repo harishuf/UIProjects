@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <title>Music Players!</title>
+
+<style>
+
+.b1{
+	float:left;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin:3.66%;
+    overflow:hidden;
+    background-color: red;
+    border:3px solid black;
+}
+
+.b2{
+	float:left;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin:3.66%;
+    overflow:hidden;
+    background-color: yellow;
+    border:3px solid black;
+}
+
+.b3{
+	float:left;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin:3.66%;
+    overflow:hidden;
+    background-color: green;
+    border:3px solid black;
+}
+
+.b4{
+	float:left;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin:3.66%;
+    overflow:hidden;
+    background-color: blue;
+    border:3px solid black;
+}
+
+ .audioCenter{
+ 	margin: 10px auto; 
+ 	width: 320px;
+ 	align-items: center;
+ 	justify-content: center;
+ 	display: flex;
+ }
+
+
+</style>
+</head>
+<body>
+
+	<div class=container>
+
+	<div class=b1></div>
+	<div class=b2></div>
+	<div class=b3></div>
+	<div class=b4></div>
+
+</div>
+<div class="container-fluid audioCenter">
+<audio controls id="widget">
+	
+</audio>
+</div>
+<script>
+	$(document).ready(function(){
+
+        $("div").click(function(){
+
+        	
+        	var art="";
+        	
+
+        	if($(this).hasClass('b1')){
+        	 art="linkin park";
+        	}        	
+
+        	if ($(this).hasClass('b2')){
+        		  art="audioslave";
+        	}
+
+        	if ($(this).hasClass('b3')){
+        		  art="foo fighters";
+        	}
+
+        	if ($(this).hasClass('b4')){
+        		 art="coldplay";
+        	}
+            
+            //console.log(art);
+            if(!art==""){
+            console.log(art);  
+            apiurl="https://api.spotify.com/v1/search?q="+art+"&type=track";
+        	var ecurl=encodeURI(apiurl);
+        	var access_token;
+        	console.log(ecurl);
+
+        	
+          if(!apiurl==""){
+        	$.ajax({
+        		url:ecurl,
+//         		headers: {
+//     Authorization: "Bearer BQAurUagXRM26NkPnSFikKKBchD58ERt0EXITowqrmzX8I9cpa4icNH6mYmXb6mHodvDeEzzxk9ktP1hxlG54E8okjvVgocs9sbZtDcrqMYFGRPZl3nRz1bg30jFmkRIESGgKCegOhop0tx7VKBgHI0Y8M6rIN4sj86g9x0BNs5duheX2Q"
+// }
+beforeSend: function (xhr) {
+    xhr.setRequestHeader('Authorization', 'Bearer BQBtnJV_gl393WWXIucUH8S-G5es9ZmXW5HkCDIeKs6aCSKVFFGvIRh5eXX1ZYBxxYBW3CBmdfEWQ8xCKS8TfQKdRgV47NVJtcxfUkNoH7XwHzIi56jzPsSY0m_YP12P-w8OYdQZBgU3zAagbG6B4NoQSw144EzSXs7YxEbm2XXyj1O0Kg');
+}
+
+
+        	}).done(function(data){
+
+        		song_url=data.tracks.items[0].preview_url;
+        		console.log(song_url);
+
+        	    $("#widget").attr("src",song_url);
+
+
+        	});
+}
+}
+        }); 
+		
+	});
+	</script>
+	
+</body>
+</html>
